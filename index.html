@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Todo 範例製作</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <link rel=stylesheet type="text/css" href="/style/css.css">
+</head>
+
+<body>
+  <div id="vueArea">
+    <div class="cancelMenuButton" @click="cancelMenu" v-if="isHistory == true || isSearch == true"></div>
+    <div class="top">
+
+      <div class="topButton buttonHistory">
+        <div @click="isHistory = !isHistory,isSearch = false">瀏覽紀錄</div>
+        <div class="histroyMenu generalMenu" :class="{'showMenu':isHistory}">
+          456456456456456456564
+        </div>
+      </div>
+      <div class="exhibitionSVG">
+        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+        <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet"
+          viewBox="82.56399919371094 97.64160451521867 2531.186000806289 462.35839548478134" width="2530" height="460">
+          <defs>
+            <path d="M654.18 114.15L654.18 229.74L618.06 229.74L618.06 114.15L654.18 114.15Z" id="a2zqHSXkTM"></path>
+            <path d="M726.42 147.18L726.42 114.15L618.06 114.15L618.06 147.18L726.42 147.18Z" id="e3SZC6yjjd"></path>
+            <path d="M1015.4 229.74L1015.4 196.72L618.07 196.72L618.07 229.74L1015.4 229.74Z" id="b6KmoMmeqC"></path>
+            <path d="M1033.46 295.8L1033.46 262.77L600 262.77L600 295.8L1033.46 295.8Z" id="c1ErZe30cf"></path>
+            <path d="M636.12 262.77L636.12 560L600 560L600 262.77L636.12 262.77Z" id="a1pJcWZw0U"></path>
+            <path d="M1033.46 262.77L1033.46 560L997.34 560L997.34 262.77L1033.46 262.77Z" id="a2bY3pukxZ"></path>
+            <path d="M1033.46 560L1033.46 526.97L600 526.97L600 560L1033.46 560Z" id="bidP2AZJ8"></path>
+            <path d="M1141.28 114.15L1141.28 510.46L1100 510.46L1100 114.15L1141.28 114.15Z" id="dVPUMHBdz"></path>
+            <path d="M1471.54 147.18L1471.54 114.15L1100 114.15L1100 147.18L1471.54 147.18Z" id="jLI5V2hD2"></path>
+            <path d="M1471.54 229.74L1471.54 196.72L1100 196.72L1100 229.74L1471.54 229.74Z" id="b7JMrbC458"></path>
+            <path d="M1471.54 114.15L1471.54 229.74L1430.26 229.74L1430.26 114.15L1471.54 114.15Z" id="koImoPFub"></path>
+            <path d="M1244.49 347.84L1244.49 560L1203.2 560L1203.2 347.84L1244.49 347.84Z" id="f1I14Rxusi"></path>
+            <path d="M1471.54 312.31L1471.54 279.28L1182.56 279.28L1182.56 312.31L1471.54 312.31Z" id="d33QYQhjvg"></path>
+            <path d="M1512.82 560L1512.82 526.97L1203.2 526.97L1203.2 560L1512.82 560Z" id="b4iWFFdLEV"></path>
+            <path d="M1285.77 246.26L1285.77 378.36L1244.49 378.36L1244.49 246.26L1285.77 246.26Z" id="bxYSTSdgv"></path>
+            <path d="M1388.97 246.26L1388.97 378.36L1347.69 378.36L1347.69 246.26L1388.97 246.26Z" id="br1GuJfzl"></path>
+            <path d="M1492.18 378.36L1492.18 345.33L1182.56 345.33L1182.56 378.36L1492.18 378.36Z" id="b1VjOzbzQC"></path>
+            <path d="M1533.46 477.44L1533.46 444.41L1285.77 444.41L1285.77 477.44L1533.46 477.44Z" id="a20qu99Spk"></path>
+            <path d="M1327.05 345.33L1327.05 473.31L1285.77 473.31L1285.77 345.33L1327.05 345.33Z" id="d6VvUUo2aK"></path>
+            <path d="M1430.26 394.87L1430.26 477.44L1388.97 477.44L1388.97 394.87L1430.26 394.87Z" id="h14srNEop"></path>
+            <path d="M1827.05 130.67L1827.05 97.64L1600 97.64L1600 130.67L1827.05 130.67Z" id="d3xwTanxii"></path>
+            <path d="M1827.05 229.74L1827.05 196.72L1600 196.7L1600 229.73L1827.05 229.74Z" id="eWwJk1rdZ"></path>
+            <path d="M1641.28 97.64L1641.28 279.28L1600 279.28L1600 97.64L1641.28 97.64Z" id="fZeTS6JCD"></path>
+            <path d="M1827.05 180.21L1827.05 147.18L1600 147.18L1600 180.21L1827.05 180.21Z" id="a58NAoSz5S"></path>
+            <path d="M1827.05 279.28L1827.05 246.26L1600 246.26L1600 279.28L1827.05 279.28Z" id="ePaBZq2in"></path>
+            <path d="M1827.05 147.18L1827.05 229.74L1785.77 229.74L1785.77 147.18L1827.05 147.18Z" id="b1JsdDMnKx"></path>
+            <path d="M1744.49 203.47L1744.49 279.28L1703.2 279.28L1703.2 203.47L1744.49 203.47Z" id="b4bBNw1gnr"></path>
+            <path d="M1744.49 97.64L1744.49 173.45L1703.2 173.45L1703.2 97.64L1744.49 97.64Z" id="b2iMiIeT"></path>
+            <path d="M2095.38 147.18L2095.38 114.15L1868.33 114.14L1868.33 147.16L2095.38 147.18Z" id="c3SRGOfYgv"></path>
+            <path d="M1909.61 97.64L1909.61 196.72L1868.33 196.72L1868.33 97.64L1909.61 97.64Z" id="d1lgkh68Jk"></path>
+            <path d="M2095.38 196.73L2095.38 163.71L1930.26 163.69L1930.26 196.72L2095.38 196.73Z" id="axTwueWSR"></path>
+            <path d="M1909.61 213.23L1909.61 378.36L1868.33 378.36L1868.33 213.23L1909.61 213.23Z" id="ab51j86Y2C"></path>
+            <path d="M2095.38 246.27L2095.38 213.25L1868.33 213.23L1868.33 246.26L2095.38 246.27Z" id="cxQTdKZFz"></path>
+            <path d="M2095.38 378.38L2095.38 345.35L1868.33 345.33L1868.33 378.36L2095.38 378.38Z" id="b2lZ1KVdVn"></path>
+            <path d="M2095.38 213.23L2095.38 378.36L2054.1 378.36L2054.1 213.23L2095.38 213.23Z" id="b4oObIqtsj"></path>
+            <path d="M1971.54 213.23L1971.54 378.36L1930.26 378.36L1930.26 213.23L1971.54 213.23Z" id="b1dLnsgBZV"></path>
+            <path d="M2033.46 213.23L2033.46 378.36L1992.18 378.36L1992.18 213.23L2033.46 213.23Z" id="c48qpC8tr"></path>
+            <path d="M1847.69 328.82L1847.69 295.8L1620.64 295.8L1620.64 328.82L1847.69 328.82Z" id="a1KPy7npNl"></path>
+            <path d="M1847.69 427.9L1847.69 394.87L1620.64 394.86L1620.64 427.88L1847.69 427.9Z" id="b21RBtggBK"></path>
+            <path d="M1661.92 295.8L1661.92 477.44L1620.64 477.44L1620.64 295.8L1661.92 295.8Z" id="a1a5Uks5SC"></path>
+            <path d="M1847.69 378.36L1847.69 345.33L1620.64 345.33L1620.64 378.36L1847.69 378.36Z" id="d4APyUjWO"></path>
+            <path d="M1847.69 477.44L1847.69 444.41L1620.64 444.41L1620.64 477.44L1847.69 477.44Z" id="d1SF8CTKoV"></path>
+            <path d="M1847.69 295.8L1847.69 477.44L1806.41 477.44L1806.41 295.8L1847.69 295.8Z" id="a3Bs6zVSpx"></path>
+            <path d="M1703.2 444.41L1703.2 560L1661.92 560L1661.92 444.41L1703.2 444.41Z" id="ahlgZV6MS"></path>
+            <path d="M1806.41 444.41L1806.41 560L1765.13 560L1765.13 444.41L1806.41 444.41Z" id="b8kuDsiaW"></path>
+            <path d="M2095.38 560L2095.38 526.97L1775.45 526.97L1775.45 560L2095.38 560Z" id="iBo1tvSbK"></path>
+            <path d="M1703.2 560L1703.2 526.97L1600 526.97L1600 560L1703.2 560Z" id="i75yXqver4"></path>
+            <path d="M2095.38 439.65L2095.38 555.24L2054.1 555.24L2054.1 439.65L2095.38 439.65Z" id="caBSSU3GP"></path>
+            <path d="M474.74 105.33L474.74 187.9L433.46 187.9L433.46 105.33L474.74 105.33Z" id="c1c4aLqV7D"></path>
+            <path d="M459.11 270.46L459.11 237.44L170.13 237.44L170.13 270.46L459.11 270.46Z" id="cWnBlhxkZ"></path>
+            <path d="M459.11 402.56L459.11 369.54L170.13 369.54L170.13 402.56L459.11 402.56Z" id="a17Cj31tJi"></path>
+            <path d="M500.39 551.18L500.39 518.15L128.85 518.15L128.85 551.18L500.39 551.18Z" id="c5wHVHOM12"></path>
+            <path d="M335.26 237.44L335.26 551.18L293.98 551.18L293.98 237.44L335.26 237.44Z" id="gh3pHA5g1"></path>
+            <path d="M536.67 204.41L536.67 171.38L82.56 171.41L82.56 204.44L536.67 204.41Z" id="e3iBOc5RzI"></path>
+            <path d="M123.85 171.38L123.85 303.49L82.56 303.49L82.56 171.38L123.85 171.38Z" id="bkm6wvcOl"></path>
+            <path d="M536.1 171.04L538.33 303.12L497.05 303.81L494.83 171.74L536.1 171.04Z" id="a9Vn7nR8M"></path>
+            <path d="M474.74 138.36L474.74 105.33L165.13 105.35L165.13 138.38L474.74 138.36Z" id="bl6uEtBrY"></path>
+            <path d="M2226.25 120L2226.25 280L2186.25 280L2186.25 120L2226.25 120Z" id="a1V3c0ujSe"></path>
+            <path d="M2323.75 280L2323.75 240.02L2186.25 240L2186.25 279.98L2323.75 280Z" id="apVjFcPYq"></path>
+            <path d="M2226.25 320L2226.25 480L2186.25 480L2186.25 320L2226.25 320Z" id="fDQvQakve"></path>
+            <path d="M2323.75 360L2323.75 320.02L2186.25 320L2186.25 359.98L2323.75 360Z" id="h2rOQFmT6Z"></path>
+            <path d="M2325 200L2325 360L2285 360L2285 200L2325 200Z" id="b2CCgPWMO"></path>
+            <path d="M2323.75 480L2323.75 440.02L2186.25 440L2186.25 479.98L2323.75 480Z" id="b1xWIQHeVK"></path>
+            <path d="M2226.25 500L2226.25 560L2186.25 560L2186.25 500L2226.25 500Z" id="aas3pIxkD"></path>
+            <path d="M2276.25 500L2276.25 560L2236.25 560L2236.25 500L2276.25 500Z" id="a1y7GenCa2"></path>
+            <path d="M2326.25 500L2326.25 560L2286.25 560L2286.25 500L2326.25 500Z" id="fiYBBWKEe"></path>
+            <path d="M2326.25 400L2326.25 480L2286.25 480L2286.25 400L2326.25 400Z" id="a1mUr44xIe"></path>
+            <path d="M2388.75 120L2388.75 560L2348.75 560L2348.75 120L2388.75 120Z" id="b100OAZm8N"></path>
+            <path d="M2613.75 120L2613.75 560L2573.75 560L2573.75 120L2613.75 120Z" id="a14PoU6BLt"></path>
+            <path d="M2611.25 160L2611.25 120.02L2348.75 120L2348.75 159.98L2611.25 160Z" id="giAlgs5mL"></path>
+            <path d="M2463.75 180L2463.75 260L2423.75 260L2423.75 180L2463.75 180Z" id="a10IalIKe"></path>
+            <path d="M2536.25 180L2536.25 260L2496.25 260L2496.25 180L2536.25 180Z" id="e1R9y3N6gy"></path>
+            <path d="M2561.25 260L2561.25 220.02L2398.75 220L2398.75 259.98L2561.25 260Z" id="f78dFOso4D"></path>
+            <path d="M2501.25 220L2501.25 320L2461.25 320L2461.25 220L2501.25 220Z" id="c5n5uTD2ih"></path>
+            <path d="M2561.25 320L2561.25 280.02L2398.75 280L2398.75 319.98L2561.25 320Z" id="hssmyeYhT"></path>
+            <path d="M2463.75 310L2463.75 410L2423.75 410L2423.75 310L2463.75 310Z" id="hUaesVUFw"></path>
+            <path d="M2548.75 420L2548.75 380.02L2423.75 380L2423.75 419.98L2548.75 420Z" id="bj2Go2oa9"></path>
+            <path d="M2611.25 560L2611.25 520.02L2486.25 520L2486.25 559.98L2611.25 560Z" id="aovvMgc7w"></path>
+            <path d="M2526.25 480L2526.25 560L2486.25 560L2486.25 480L2526.25 480Z" id="f11IdAlDa"></path>
+          </defs>
+          <g>
+            <g>
+              <g>
+                <use xlink:href="#a2zqHSXkTM" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#a2zqHSXkTM" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#e3SZC6yjjd" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#e3SZC6yjjd" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#b6KmoMmeqC" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#b6KmoMmeqC" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#c1ErZe30cf" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#c1ErZe30cf" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#a1pJcWZw0U" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#a1pJcWZw0U" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#a2bY3pukxZ" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#a2bY3pukxZ" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#bidP2AZJ8" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#bidP2AZJ8" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+            </g>
+            <g>
+              <g>
+                <use xlink:href="#dVPUMHBdz" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#dVPUMHBdz" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#jLI5V2hD2" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#jLI5V2hD2" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#b7JMrbC458" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#b7JMrbC458" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#koImoPFub" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#koImoPFub" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#f1I14Rxusi" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#f1I14Rxusi" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#d33QYQhjvg" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#d33QYQhjvg" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#b4iWFFdLEV" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#b4iWFFdLEV" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#bxYSTSdgv" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#bxYSTSdgv" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#br1GuJfzl" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#br1GuJfzl" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#b1VjOzbzQC" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#b1VjOzbzQC" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#a20qu99Spk" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#a20qu99Spk" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#d6VvUUo2aK" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#d6VvUUo2aK" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#h14srNEop" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#h14srNEop" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+            </g>
+            <g>
+              <g>
+                <use xlink:href="#d3xwTanxii" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#d3xwTanxii" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#eWwJk1rdZ" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#eWwJk1rdZ" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#fZeTS6JCD" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#fZeTS6JCD" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#a58NAoSz5S" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#a58NAoSz5S" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#ePaBZq2in" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#ePaBZq2in" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#b1JsdDMnKx" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#b1JsdDMnKx" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#b4bBNw1gnr" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#b4bBNw1gnr" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#b2iMiIeT" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#b2iMiIeT" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#c3SRGOfYgv" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#c3SRGOfYgv" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#d1lgkh68Jk" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#d1lgkh68Jk" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#axTwueWSR" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#axTwueWSR" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#ab51j86Y2C" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#ab51j86Y2C" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#cxQTdKZFz" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#cxQTdKZFz" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#b2lZ1KVdVn" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#b2lZ1KVdVn" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#b4oObIqtsj" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#b4oObIqtsj" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#b1dLnsgBZV" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#b1dLnsgBZV" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#c48qpC8tr" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#c48qpC8tr" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#a1KPy7npNl" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#a1KPy7npNl" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#b21RBtggBK" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#b21RBtggBK" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#a1a5Uks5SC" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#a1a5Uks5SC" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#d4APyUjWO" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#d4APyUjWO" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#d1SF8CTKoV" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#d1SF8CTKoV" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#a3Bs6zVSpx" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#a3Bs6zVSpx" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#ahlgZV6MS" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#ahlgZV6MS" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#b8kuDsiaW" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#b8kuDsiaW" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#iBo1tvSbK" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#iBo1tvSbK" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#i75yXqver4" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#i75yXqver4" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#caBSSU3GP" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#caBSSU3GP" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+            </g>
+            <g>
+              <g>
+                <use xlink:href="#c1c4aLqV7D" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#c1c4aLqV7D" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#cWnBlhxkZ" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#cWnBlhxkZ" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#a17Cj31tJi" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#a17Cj31tJi" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#c5wHVHOM12" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#c5wHVHOM12" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#gh3pHA5g1" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#gh3pHA5g1" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#e3iBOc5RzI" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#e3iBOc5RzI" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#bkm6wvcOl" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#bkm6wvcOl" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#a9Vn7nR8M" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#a9Vn7nR8M" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+              <g>
+                <use xlink:href="#bl6uEtBrY" opacity="1" fill="#000000" fill-opacity="1"></use>
+                <g>
+                  <use xlink:href="#bl6uEtBrY" opacity="1" fill-opacity="0" stroke="#000000" stroke-width="1" stroke-opacity="0"></use>
+                </g>
+              </g>
+            </g>
+            <g>
+              <g>
+                <use xlink:href="#a1V3c0ujSe" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#apVjFcPYq" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#fDQvQakve" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#h2rOQFmT6Z" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#b2CCgPWMO" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#b1xWIQHeVK" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#aas3pIxkD" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#a1y7GenCa2" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#fiYBBWKEe" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#a1mUr44xIe" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#b100OAZm8N" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#a14PoU6BLt" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#giAlgs5mL" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#a10IalIKe" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#e1R9y3N6gy" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#f78dFOso4D" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#c5n5uTD2ih" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#hssmyeYhT" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#hUaesVUFw" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#bj2Go2oa9" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#aovvMgc7w" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+              <g>
+                <use xlink:href="#f11IdAlDa" opacity="1" fill="#000000" fill-opacity="1"></use>
+              </g>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="topButton buttonSearch">
+        <div @click="isSearch = !isSearch ,isHistory = false">條件搜尋</div>
+        <div class="searchMenu generalMenu" :class="{'showMenu':isSearch}">
+          <ul>
+            <li class='searchByName inMenuColumn'>
+              <input type="text" placeholder="以名稱搜尋" v-model="inputName"></input>
+              {{inputName}}
+            </li>
+            <li class='searchByCondition inMenuColumn'></li>
+            <li>票價
+              <select v-model="inputPrice">
+                <option v-for="item in fliterCondition.priceList" :value="item.price">
+                  {{item.option}}
+                </option>
+              </select>
+              <span>Selected: {{ inputPrice }}</span>
+            </li>
+            <li>地點
+              <select v-model="inputCity">
+                <option v-for="item in fliterCondition.cityList" :value='item'>{{item}}</option>
+              </select>
+              select:{{inputCity}}
+              <div class='searchIcon' @click="doFliter()">1
+                <?xml version="1.0" encoding="iso-8859-1"?>
+                <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                  width="20px" height="20px" viewBox="0 0 485.213 485.213" style="enable-background:new 0 0 485.213 485.213;"
+                  xml:space="preserve">
+                  <g>
+                    <g>
+                      <path class='searchIconPath' d="M471.882,407.567L360.567,296.243c-16.586,25.795-38.536,47.734-64.331,64.321l111.324,111.324
+            c17.772,17.768,46.587,17.768,64.321,0C489.654,454.149,489.654,425.334,471.882,407.567z" />
+                      <path class='searchIconPath' d="M363.909,181.955C363.909,81.473,282.44,0,181.956,0C81.474,0,0.001,81.473,0.001,181.955s81.473,181.951,181.955,181.951
+            C282.44,363.906,363.909,282.437,363.909,181.955z M181.956,318.416c-75.252,0-136.465-61.208-136.465-136.46
+            c0-75.252,61.213-136.465,136.465-136.465c75.25,0,136.468,61.213,136.468,136.465
+            C318.424,257.208,257.206,318.416,181.956,318.416z" />
+                      <path class='searchIconPath' d="M75.817,181.955h30.322c0-41.803,34.014-75.814,75.816-75.814V75.816C123.438,75.816,75.817,123.437,75.817,181.955z"
+                      />
+                    </g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                  <g>
+                  </g>
+                </svg>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="pictureFrame">
+      <div class="innerPictureFrame">
+        <div class='showData'>
+          <div class="indexPage" v-if="whichPageShow == 0">
+            歡迎來到全台展覽資訊網</br>
+            歡迎來到全台展覽資訊網</br>
+            歡迎來到全台展覽資訊網</br>
+            歡迎來到全台展覽資訊網</br>
+            歡迎來到全台展覽資訊網</br>
+            歡迎來到全台展覽資訊網</br>
+            歡迎來到全台展覽資訊網</br>
+            歡迎來到全台展覽資訊網</br>
+            歡迎來到全台展覽資訊網</br>
+            歡迎來到全台展覽資訊網</br>
+            歡迎來到全台展覽資訊網</br>
+            歡迎來到全台展覽資訊網</br>
+            歡迎來到全台展覽資訊網</br>
+            歡迎來到全台展覽資訊網</br>
+            歡迎來到全台展覽資訊網</br>
+            歡迎來到全台展覽資訊網</br>
+            歡迎來到全台展覽資訊網</br>
+            歡迎來到全台展覽資訊網</br>
+            歡迎來到全台展覽資訊網</br>
+            歡迎來到全台展覽資訊網</br>
+            歡迎來到全台展覽資訊網</br>
+          </div>
+          <div class="historyPage" v-if="whichPageShow == 1"></div>
+          <div class="serachPage" v-if="whichPageShow == 2">
+            <table>
+              <tr>
+                <th>活動名稱</th>
+                <th>活動地點</th>
+                <th>票價區間</th>
+                <th>展期</th>
+                <th>詳細資訊</th>
+              </tr>
+              <tr v-for="item in fliterData">
+                <td class="titleInTable">{{item.title}}</td>
+                <td class="locationInTable">{{item.showInfo[0].location}}</td>
+                <td class="priceInTable">{{item.processedPrice}}</td>
+                <td class="dateInTable">{{item.startDate}} </br>~</br> {{item.endDate}}</td>
+                <td class="detailInTable" @click="showDetailInformation(item.UID)">觀看詳細資訊</td>
+              </tr>
+            </table>
+          </div>
+          <div class="emptyPage" v-if="whichPageShow == 3">
+            抱歉，沒有你要找的展覽
+          </div>
+          <div class="detailPage" v-if="whichPageShow == 4">
+            抱歉，沒有你要找的展覽
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+    </div>
+  </div>
+  <script src="style/vue.js"></script>
+  <script src="style/styleScript2.js"></script>
+</body>
+
+</html>
