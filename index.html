@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>全台展覽資訊網</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <link rel=stylesheet type="text/css" href="/style/css.css">
+</head>
+
+<body>
+  <div id="game">
+    <div class="newPage page" v-if="isNewGame">
+      height
+      <input type="number" v-model.number="column" min="1" :max="heightBlockMax">
+      </br>
+      width
+      <input type="number" v-model.number="row" min="1" :max="widthBlockMax">
+      </br>
+      block width
+      
+
+      <input type="number" v-model.number="size" min="40" max="55"></br>
+      <button @click="startGame()">start</button>
+    </div>
+      <div class="endPage page" v-if="isGameEnd">
+      恭喜你破關</br>你花費了{{timer}}秒
+      <button @click="startGame()">再挑戰一次</button>
+    </div>
+    <div class="startPage page" v-if="isGameStart">
+      <div class="timerAndAnswer">
+        經過時間: {{timer}}秒<button @click="endGame()">end</button>
+      </div>
+
+      <div class="blocks">
+
+        <div class="allCircle pic" v-show="isCircleShow">
+          <div class="circle1" :style="circleStyle"></div>
+        </div>
+        <div class="allCross pic" v-show="isCrossShow">
+          <div class="cross1" :style="crossStyle"></div>
+          <div class="cross2" :style="crossStyle"></div>
+        </div>
+        <table>
+          <tr v-for="y in column">
+            <td class="singleBlock" v-for="x in row" @click="clickBlock(x,y)" :style="blockStyle">
+              {{ numberList[y-1][x-1] }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <script src="style/vue.js"></script>
+  <script src="style/Tone.min.js"></script>
+  <script src="style/styleScript2.js"></script>
+</body>
+
+</html>
