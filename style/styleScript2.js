@@ -70,15 +70,6 @@ var game = new Vue({
       let startTimer = window.requestAnimationFrame(step);
     }
     ,
-    countTimer: function () {
-      if (this.isGameStart == true) {
-        this.timer += 1
-        setTimeout(this.countTimer, 1000);
-      }
-      else {
-        console.log('end')
-      }
-    },
     endGame: function () {
       this.reset()
       this.isGameEnd = true
@@ -133,7 +124,6 @@ var game = new Vue({
       }, 200)
     },
     clickBlock: function (x, y) {
-      console.log(x,y)
       if (this.numSum !== this.count) {
         if (this.numberList[y - 1][x - 1] == this.count) {
           this.count += 1
@@ -148,7 +138,6 @@ var game = new Vue({
     },
     randomSortList: function () {
       let list = [...this.numberList]
-      console.log(list)
       let temp = []
       for (let i = 0; i < this.numberList.length; i++) {
         let randomNum = Math.floor(Math.random() * (this.numberList.length - i))
